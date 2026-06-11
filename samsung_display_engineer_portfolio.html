@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최대휘 | 삼성디스플레이 18년차 기구설계 수석엔지니어 포트폴리오</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              500: '#0070f3',
+              600: '#0258cb',
+              900: '#0f172a',
+              950: '#030712',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b82f6;
+    }
+  </style>
+</head>
+<body class="bg-brand-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-brand-950/85 backdrop-blur-md border-b border-slate-800/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20">
+          SW
+        </div>
+        <div>
+          <span class="font-bold text-lg tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">최대휘</span>
+          <span class="text-xs text-blue-400 ml-2 hidden sm:inline-block">삼성디스플레이 기구설계 수석연구원</span>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-blue-400 transition-colors">엔지니어 가치</a>
+        <a href="#philosophy" class="hover:text-blue-400 transition-colors">설계 철학</a>
+        <a href="#experience" class="hover:text-blue-400 transition-colors">커리어 패스</a>
+        <a href="#simulator" class="hover:text-blue-400 transition-colors">S/W 융합 실증 (시뮬레이터)</a>
+        <a href="#projects" class="hover:text-blue-400 transition-colors">주요 양산성과</a>
+        <a href="#contact" class="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20">협업 제안</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white focus:outline-none">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-950/95 border-b border-slate-800 px-4 py-6 space-y-4">
+      <a href="#about" class="block text-slate-300 hover:text-blue-400 text-lg py-2">엔지니어 가치</a>
+      <a href="#philosophy" class="block text-slate-300 hover:text-blue-400 text-lg py-2">설계 철학</a>
+      <a href="#experience" class="block text-slate-300 hover:text-blue-400 text-lg py-2">커리어 패스</a>
+      <a href="#simulator" class="block text-slate-300 hover:text-blue-400 text-lg py-2">S/W 융합 실증 (시뮬레이터)</a>
+      <a href="#projects" class="block text-slate-300 hover:text-blue-400 text-lg py-2">주요 양산성과</a>
+      <a href="#contact" class="block w-full text-center px-4 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-500">협업 제안</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (ENGINEER PORTRAIT FOCUS) -->
+  <section class="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-950/20 via-slate-950 to-brand-950">
+    <!-- Cyber Background Grid Lines -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text Intro -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center space-x-2 bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-blue-500/20">
+            <i class="fa-solid fa-medal mr-1"></i> 18-YEAR VETERAN SENIOR ENGINEER
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+            <span class="block text-slate-300 text-2xl sm:text-3xl font-medium tracking-normal">도면에서 양산 라인까지, 무결점 설계자</span>
+            <span class="block mt-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400">설비혁신 최대휘</span>
+          </h1>
+          <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+            삼성디스플레이에서 18년 동안 최첨단 모듈 도포 장비 설계를 성공적으로 리딩하며 대량 양산(Mass Production) 공정 안정화를 이끌었습니다.<br>
+            <strong class="text-slate-200">정밀 기계설계</strong> 지식에 고도화된 <strong class="text-slate-200">역학 해석</strong>과 실시간 제어를 위한 <strong class="text-slate-200">소프트웨어 역량</strong>을 융합하여 장비 신뢰성을 극대화합니다.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 pt-4">
+            <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold hover:shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2">
+              <i class="fa-solid fa-laptop-code"></i> 직접 코딩한 설계 툴 검증
+            </a>
+            <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-bold hover:bg-slate-800 transition-all text-center">
+              주요 양산 적용 성과
+            </a>
+          </div>
+        </div>
+
+        <!-- Professional Personal Profile Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-[390px] rounded-3xl bg-slate-900/90 border border-slate-800/80 p-8 shadow-2xl shadow-blue-950/60 backdrop-blur-md group overflow-hidden">
+            <!-- Decorative Tech Borders -->
+            <div class="absolute top-0 right-0 w-12 h-12 border-t border-r border-blue-500/40 rounded-tr-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-blue-500/40 rounded-bl-3xl"></div>
+            
+            <div class="relative z-10 space-y-6">
+              <!-- Portrait/Avatar Placeholder (Professional, High-End Vector Design) -->
+              <div class="flex items-center space-x-4">
+                <div class="relative">
+                  <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-[2px]">
+                    <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-blue-400 font-bold text-xl">
+                      KSW
+                    </div>
+                  </div>
+                  <span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-slate-900 animate-pulse"></span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white">최대휘 SE</h3>
+                  <p class="text-xs text-slate-400">삼성디스플레이 모듈라인 기구설계 리드</p>
+                </div>
+              </div>
+
+              <!-- Executive Credentials -->
+              <div class="space-y-3 pt-4 border-t border-slate-800/60">
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-slate-500"><i class="fa-solid fa-calendar-check mr-2 text-blue-500"></i>총 경력</span>
+                  <span class="font-bold text-white">18년 차 (2008년 입사)</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-slate-500"><i class="fa-solid fa-lightbulb mr-2 text-blue-500"></i>핵심 설계 특허</span>
+                  <span class="font-bold text-white">12건 보유 (도포 유로 최적화 외)</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-slate-500"><i class="fa-solid fa-network-wired mr-2 text-blue-500"></i>설계 검증 시스템</span>
+                  <span class="font-bold text-white">양산 설비 150대 이상 실장 적용</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-slate-500"><i class="fa-solid fa-users mr-2 text-blue-500"></i>리더십 포지션</span>
+                  <span class="font-bold text-white">기구설계 표준화 TF 파트장</span>
+                </div>
+              </div>
+
+              <!-- Quick Quote Sign-off -->
+              <div class="bg-slate-950/80 rounded-xl p-4 border border-slate-800/80 font-mono text-xs text-slate-400">
+                <i class="fa-solid fa-quote-left text-blue-500 text-sm block mb-1"></i>
+                "설계 도면 위의 오차 0.1mm는 현장에서 수억 원의 손실이 됩니다. 해석과 소프트웨어가 검증한 무결점 설계만을 양산에 투입합니다."
+                <div class="text-right mt-2 text-blue-400 font-semibold">- 최대휘 SE 서명 -</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ENGINEER'S PHILOSOPHY SECTION -->
+  <section id="philosophy" class="py-20 bg-brand-900/30 border-y border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono text-blue-400 tracking-widest uppercase">ENGINEERING PHILOSOPHY</h2>
+        <p class="text-3xl font-extrabold text-white mt-2">18년 동안 고수해 온 설계의 세 가지 핵심 원칙</p>
+        <div class="w-12 h-1 bg-blue-500 mx-auto mt-4 rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Principle 1 -->
+        <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800/60 hover:border-blue-500/30 transition-all text-center">
+          <div class="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl mx-auto mb-6">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">현장 및 양산 중심 설계</h3>
+          <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+            연구실 안에서만 완벽한 도면은 무의미합니다. 가동률 99.9%를 충족시키기 위해 가혹한 현장 제조 환경, 열 변형, 진동 특성, 메인터넌스 편의성까지 계산에 완벽히 녹여냅니다.
+          </p>
+        </div>
+        <!-- Principle 2 -->
+        <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800/60 hover:border-cyan-500/30 transition-all text-center">
+          <div class="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-2xl mx-auto mb-6">
+            <i class="fa-solid fa-calculator"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">물리 수치적 해석 기반 검증</h3>
+          <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+            직관과 감에 의존하지 않고 유체역학 공식과 구조 해석 시뮬레이션(FEA/CFD)을 기반으로 원천적 도포 거동을 정량 제어합니다. 실패 비용을 극단적으로 최소화합니다.
+          </p>
+        </div>
+        <!-- Principle 3 -->
+        <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800/60 hover:border-indigo-500/30 transition-all text-center">
+          <div class="w-16 h-16 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-2xl mx-auto mb-6">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">기구와 소프트웨어의 일체화</h3>
+          <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+            단순히 철판을 조립하는 기구 설계에서 한 단계 더 나아가 기구의 비선형 거동을 제어하고 최적화할 수 있는 자가 소프트웨어 툴 및 제어 알고리즘을 융합합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER PATH SECTION -->
+  <section id="experience" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-xs font-mono text-blue-400 tracking-widest uppercase">Career Milestones</h2>
+      <p class="text-3xl sm:text-4xl font-extrabold text-white mt-2">성장의 발자취와 핵심 성과</p>
+      <div class="w-12 h-1 bg-blue-500 mx-auto mt-4 rounded"></div>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 py-4 space-y-12">
+      <!-- Node 1 -->
+      <div class="relative pl-8 md:pl-12">
+        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-blue-600 border-4 border-brand-950 flex items-center justify-center text-white text-xs">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="md:absolute md:right-[100%] md:mr-12 md:top-1 text-slate-500 font-mono text-sm md:text-right w-32">
+          2018 - 현재
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 max-w-3xl hover:border-blue-500/30 transition-all">
+          <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded">수석연구원 (설계 리더)</span>
+          <h3 class="text-xl font-bold text-white mt-2">초정밀 모듈 도포 자동화 장비 기구설계 및 라인 양산 최적화</h3>
+          <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            - 초정밀 LCD/OLED 모듈 세부 실링용 고정밀 다축 디스펜서 도포부 헤드 설계 총괄 주도.<br>
+            - 고점성 수지 토출 균일성을 극대화하는 서보 액추에이터 및 내부 유압 경로 설계 표준 수립.<br>
+            - 전산 유체 해석(CFD) 기법 적용을 통한 노즐 미세 기포 억제 특허 출원 및 대량 양산 설비 라인 실장 완료.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">SolidWorks</span>
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">ANSYS CFD</span>
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">토출 유동 해석</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 2 -->
+      <div class="relative pl-8 md:pl-12">
+        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-cyan-600 border-4 border-brand-950 flex items-center justify-center text-white text-xs">
+          <i class="fa-solid fa-award"></i>
+        </div>
+        <div class="md:absolute md:right-[100%] md:mr-12 md:top-1 text-slate-500 font-mono text-sm md:text-right w-32">
+          2014 - 2018
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 max-w-3xl hover:border-cyan-500/30 transition-all">
+          <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded">책임연구원</span>
+          <h3 class="text-xl font-bold text-white mt-2">Flexible OLED 곡면 모듈 합착 및 에지 도포 설비 개발</h3>
+          <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            - 신규 플렉시블 디스플레이 에지 곡면 수지(Ink/Sealant) 정밀 피딩 기계부 개발.<br>
+            - 열변형 방지를 위한 진공 합착 유닛의 구조 유한요소분석(FEA) 모델 제작 및 구조 프레임 강도 보강 설계.<br>
+            - 고온 가압 환경의 불균일 응력 분산을 제어하는 링크 메커니즘을 특허로 출원 및 상용화 성공.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">NX CAD</span>
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">ANSYS Mechanical</span>
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">고정밀 캘리브레이션</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 3 -->
+      <div class="relative pl-8 md:pl-12">
+        <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-700 border-4 border-brand-950 flex items-center justify-center text-white text-xs">
+          <i class="fa-solid fa-user-gear"></i>
+        </div>
+        <div class="md:absolute md:right-[100%] md:mr-12 md:top-1 text-slate-500 font-mono text-sm md:text-right w-32">
+          2008 - 2014
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 max-w-3xl hover:border-slate-700 transition-all">
+          <span class="text-xs font-semibold text-slate-400 bg-slate-800 px-2.5 py-1 rounded">선임연구원</span>
+          <h3 class="text-xl font-bold text-white mt-2">모듈 조립 검사 메커니즘 및 설계 자동화 기초 프레임웍 구축</h3>
+          <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            - 고속 구동 유닛의 진동 떨림(Modal) 분석 및 고강성/경량 프레임 구조 설계 최적화.<br>
+            - G-Code 가공 궤적 좌표 제어 펌웨어 및 파라메트릭 CAD 모델링 수치 동기화용 자동 설계 제어 로직 기초 설계 담당.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">CATIA</span>
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">Vibration Analysis</span>
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">C/C++ Automation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SPOTLIGHT: MULTI-DISCIPLINARY S/W DEMO (THE SIMULATOR REFRAMED) -->
+  <section id="simulator" class="py-24 bg-brand-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Portfolio Spotlight (S/W & Physics Integration)</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">설계 표준 정립용 역학-제어 가상 시뮬레이터</h2>
+        <p class="text-slate-400 mt-2">
+          "이 시뮬레이터는 기구설계 실무진이 CAD 도면 설계 전 수지 토출 및 모듈 곡률 거동을 웹에서 즉각 파라메트릭하게 수치 계산하도록 **제가 직접 설계·개발한 연산 엔진**입니다."
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Controls Panel (Left) -->
+        <div class="lg:col-span-4 bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+          <div class="space-y-6">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-cyan-400"></i> 가상 시뮬레이션 제어 변수
+            </h3>
+            
+            <!-- Parameter 1: Pressure -->
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <span class="text-slate-400 font-medium">헤드 가압 실린더 압력 ($\Delta P$)</span>
+                <span class="text-cyan-400 font-bold font-mono"><span id="val-pressure">150</span> kPa</span>
+              </div>
+              <input type="range" id="param-pressure" min="50" max="300" value="150" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                <span>50 kPa</span>
+                <span>300 kPa</span>
+              </div>
+            </div>
+
+            <!-- Parameter 2: Viscosity -->
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <span class="text-slate-400 font-medium">수지 수치 점도 ($\mu$)</span>
+                <span class="text-cyan-400 font-bold font-mono"><span id="val-viscosity">2000</span> cP</span>
+              </div>
+              <input type="range" id="param-viscosity" min="500" max="5000" step="100" value="2000" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                <span>500 cP</span>
+                <span>5000 cP</span>
+              </div>
+            </div>
+
+            <!-- Parameter 3: Speed -->
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <span class="text-slate-400 font-medium">노즐 구동 이송속도 ($V$)</span>
+                <span class="text-cyan-400 font-bold font-mono"><span id="val-speed">50</span> mm/s</span>
+              </div>
+              <input type="range" id="param-speed" min="10" max="150" value="50" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                <span>10 mm/s</span>
+                <span>150 mm/s</span>
+              </div>
+            </div>
+
+            <!-- Parameter 4: Nozzle Diameter -->
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <span class="text-slate-400 font-medium">바늘(Needle) 노즐 구경 ($d$)</span>
+                <span class="text-cyan-400 font-bold font-mono"><span id="val-diameter">0.3</span> mm</span>
+              </div>
+              <input type="range" id="param-diameter" min="0.1" max="0.8" step="0.05" value="0.3" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                <span>0.1 mm</span>
+                <span>0.8 mm</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Math Formula Box -->
+          <div class="mt-8 p-4 rounded-xl bg-slate-950/60 border border-slate-800 font-mono text-xs text-slate-400 leading-normal">
+            <span class="text-cyan-400 font-semibold text-[10px] uppercase block mb-1">Theoretical Background</span>
+            점성 유체 수치 토출 유량 공식인 하겐-푸아죄유 수식($Q = \frac{\pi \cdot \Delta P \cdot d^4}{128 \cdot \mu \cdot L}$)을 핵심 백엔드 물리 계산 알고리즘으로 내장했습니다.
+          </div>
+        </div>
+
+        <!-- Simulation Visualization Screen (Center & Right) -->
+        <div class="lg:col-span-8 bg-slate-900/40 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+          
+          <!-- Inner Dashboard Top Stats Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 z-10">
+            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-center">
+              <p class="text-[10px] text-slate-500 uppercase font-mono">예측 도포량 ($Q$)</p>
+              <p class="text-base sm:text-lg font-bold text-cyan-400 font-mono mt-1"><span id="calc-flow">0.42</span> <span class="text-xs font-normal">mg/s</span></p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-center">
+              <p class="text-[10px] text-slate-500 uppercase font-mono">설계 두께 폭 ($W$)</p>
+              <p class="text-base sm:text-lg font-bold text-cyan-400 font-mono mt-1"><span id="calc-width">0.85</span> <span class="text-xs font-normal">mm</span></p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-center">
+              <p class="text-[10px] text-slate-500 uppercase font-mono">노즐 내부 전단 응력</p>
+              <p class="text-base sm:text-lg font-bold text-emerald-400 font-mono mt-1"><span id="calc-shear">84.2</span> <span class="text-xs font-normal">Pa</span></p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-center">
+              <p class="text-[10px] text-slate-500 uppercase font-mono">공정 수율 판정</p>
+              <p class="text-base sm:text-lg font-bold mt-1" id="calc-status">OPTIMAL</p>
+            </div>
+          </div>
+
+          <!-- Canvas Interactive Stage -->
+          <div class="relative bg-slate-950 rounded-xl border border-slate-800 overflow-hidden min-h-[300px] flex-1 flex flex-col">
+            <!-- Label/Status Overlay -->
+            <div class="absolute top-3 left-3 bg-brand-950/80 backdrop-blur border border-slate-800 px-3 py-1 rounded text-[11px] font-mono text-slate-400 z-10">
+              <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse mr-1"></span> WEB-GUI INTERFACE ACTIVE
+            </div>
+            
+            <div class="absolute top-3 right-3 flex space-x-2 z-10">
+              <button id="sim-start-btn" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded transition-all flex items-center gap-1.5">
+                <i class="fa-solid fa-play"></i> 시작
+              </button>
+              <button id="sim-reset-btn" class="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded transition-all flex items-center gap-1.5">
+                <i class="fa-solid fa-rotate-right"></i> 초기화
+              </button>
+            </div>
+
+            <!-- Canvas Element -->
+            <div class="flex-1 w-full h-full relative" id="canvas-container">
+              <canvas id="sim-canvas" class="block w-full h-full"></canvas>
+            </div>
+
+            <!-- Simulation Diagnostics / Dynamic Console Log -->
+            <div class="bg-slate-900 border-t border-slate-800 px-4 py-2 font-mono text-[10px] text-slate-400 flex justify-between items-center">
+              <div class="flex items-center space-x-2">
+                <span class="text-slate-600">[CONSOLE LOG]</span>
+                <span id="diagnostic-log">시뮬레이터 준비 완료. 제어값을 변경한 후 [시작] 버튼을 눌러주세요.</span>
+              </div>
+              <div class="text-slate-600 hidden sm:block">FPS: 60</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY PROJECTS (FOCUSED ON IMPACT & METRICS) -->
+  <section id="projects" class="py-24 bg-brand-900/30 border-y border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono text-blue-400 tracking-widest uppercase">Business Impact & Achievements</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white mt-2">비즈니스 가치를 입증하는 주요 양산 적용 실적</p>
+        <p class="text-slate-400 mt-3">설계 장비의 양산 도입 성공을 통해 생산성 제고와 투자 비용 절감을 실현했습니다.</p>
+        <div class="w-12 h-1 bg-blue-500 mx-auto mt-4 rounded"></div>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex justify-center flex-wrap gap-2 mb-10">
+        <button class="filter-btn active px-4 py-2 text-sm rounded-full bg-blue-600 text-white font-semibold transition-all" data-category="all">전체 성과</button>
+        <button class="filter-btn px-4 py-2 text-sm rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-category="mech">장비/기구설계</button>
+        <button class="filter-btn px-4 py-2 text-sm rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-category="physics">역학/시뮬레이션</button>
+        <button class="filter-btn px-4 py-2 text-sm rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-category="software">설계자동화 S/W</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+        
+        <!-- Project Card 1 (mech) -->
+        <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:shadow-lg transition-all" data-category="mech">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-950 flex flex-col justify-between p-6 border-b border-slate-800 relative">
+            <span class="text-[10px] text-blue-400 font-mono">특허 등록 완료</span>
+            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+              <i class="fa-solid fa-drafting-compass text-6xl text-blue-500"></i>
+            </div>
+            <div class="z-10">
+              <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded">기구설계</span>
+              <h4 class="text-md font-bold text-white mt-1">고점성 OCR 수지 분산용 멀티포트 노즐 기구 설계</h4>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <p class="text-xs font-mono text-slate-500">생산 라인 누적 실장 80대 이상</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              점착 OCR 도포 시 발현하는 도포 시점과 종점의 두께 단차 문제를 해결하는 특허 메커니즘을 구상, 설계하여 패널 에지 불량률을 70% 이상 획기적으로 낮췄습니다.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-500 font-mono">
+              <span>기여도: 100% (설계 주도)</span>
+              <span class="text-blue-400">불량률 0.1% 이하 목표 달성</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 (physics) -->
+        <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 hover:shadow-lg transition-all" data-category="physics">
+          <div class="h-48 bg-gradient-to-br from-cyan-900/50 to-slate-950 flex flex-col justify-between p-6 border-b border-slate-800 relative">
+            <span class="text-[10px] text-cyan-400 font-mono">CAE 시뮬레이션 공정 최적화</span>
+            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+              <i class="fa-solid fa-calculator text-6xl text-cyan-500"></i>
+            </div>
+            <div class="z-10">
+              <span class="text-[10px] bg-cyan-500/20 text-cyan-300 px-2.5 py-1 rounded">수치역학</span>
+              <h4 class="text-md font-bold text-white mt-1">갠트리 이송 축 동력학 분석 및 떨림 저감 가이드 설계</h4>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <p class="text-xs font-mono text-slate-500">고성능 서보 갠트리 지지 유닛 설계 보강</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              도포 헤드가 급가속/감속할 때 구조 프레임에 인가되는 관성 떨림을 최소화하기 위한 모달 및 전자기 조화 진동 회피 리브(Rib) 구조 보강 해석으로, 이송 정밀도를 대폭 증강시켰습니다.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-500 font-mono">
+              <span>설계 검토 기간 50% 단축</span>
+              <span class="text-cyan-400">진동 저감 40%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 (software) -->
+        <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-indigo-500/30 hover:shadow-lg transition-all" data-category="software">
+          <div class="h-48 bg-gradient-to-br from-indigo-900/50 to-slate-950 flex flex-col justify-between p-6 border-b border-slate-800 relative">
+            <span class="text-[10px] text-indigo-400 font-mono">자체 소프트웨어 설계 툴</span>
+            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+              <i class="fa-solid fa-code text-6xl text-indigo-500"></i>
+            </div>
+            <div class="z-10">
+              <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded">S/W 개발</span>
+              <h4 class="text-md font-bold text-white mt-1">설계 누적 공차 실시간 분석 및 CAD 동기화 프로그램</h4>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <p class="text-xs font-mono text-slate-500">Python 기반 기구 자동화 표준 등록</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              CAD의 부품 좌표값을 자동으로 로드하여 공차 체인(Tolerance Stackup)을 계산하고 최적 피팅 치수를 역계산해주는 엔지니어링 표준 프로그램 개발로 사내 도면 설계 리드타임을 혁신했습니다.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-500 font-mono">
+              <span>Python / SolidWorks API</span>
+              <span class="text-indigo-400">설계 검토 효율 65%↑</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 (mech) -->
+        <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:shadow-lg transition-all" data-category="mech">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-950 flex flex-col justify-between p-6 border-b border-slate-800 relative">
+            <span class="text-[10px] text-blue-400 font-mono">수입 설비 완전 국산화 개발</span>
+            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+              <i class="fa-solid fa-gears text-6xl text-blue-500"></i>
+            </div>
+            <div class="z-10">
+              <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded">기구설계</span>
+              <h4 class="text-md font-bold text-white mt-1">OLED 에지 UV 실런트 경화 냉각 챔버 유닛</h4>
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <p class="text-xs font-mono text-slate-500">공정 투자비 수십억 원 세이빙 기여</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              OLED 패널 접착 수지 조사 시 발생하는 자외선 램프의 고열 변형 현상을 극복하는 공냉-식 순환 구조 냉각 가이드를 설계하여 수입 수동 챔버 설비를 완전 자체 기술화로 성공시켰습니다.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-500 font-mono">
+              <span>기여도: 85% (구조 메커니즘 전담)</span>
+              <span class="text-blue-400">설비 단가 30% 절감</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MOCK CO-WORKER REVIEWS SECTION -->
+  <section id="testimonials" class="py-20 bg-slate-950 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono text-blue-400 tracking-widest uppercase">CO-WORKER FEEDBACK</h2>
+        <p class="text-3xl font-extrabold text-white mt-2">현장 엔지니어들이 함께 일하고 싶어하는 수석</p>
+        <div class="w-12 h-1 bg-blue-500 mx-auto mt-4 rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Review 1 -->
+        <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800/80">
+          <p class="text-slate-400 text-sm leading-relaxed italic">
+            "최대휘 SE님이 설계한 설비는 셋업 후 라인을 올릴 때 시행착오가 거의 없습니다. CAD 도면만 보고 끝나는 것이 아니라 시뮬레이션을 통해 수지 토출 정밀성을 미리 정량적으로 검증하고 넘어가기 때문입니다."
+          </p>
+          <div class="flex items-center space-x-3 mt-6">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-300">공</div>
+            <div>
+              <p class="text-sm font-bold text-slate-200">공정기술팀 박정우 파트장</p>
+              <p class="text-[10px] text-slate-500">삼성디스플레이 천안캠퍼스</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800/80">
+          <p class="text-slate-400 text-sm leading-relaxed italic">
+            "기구 설계 전공자임에도 불구하고 G-Code 연동이나 피딩 제어 알고리즘 프로그래밍에 대단히 깊은 지식을 가지고 계십니다. 설비 소프트웨어팀과의 기구 연동 이슈가 터졌을 때 중재자 역할을 하시는 최고의 리더입니다."
+          </p>
+          <div class="flex items-center space-x-3 mt-6">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-300">설</div>
+            <div>
+              <p class="text-sm font-bold text-slate-200">설비 제어 S/W 개발실 최현우 책임</p>
+              <p class="text-[10px] text-slate-500">삼성디스플레이 기흥캠퍼스</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800/80">
+          <p class="text-slate-400 text-sm leading-relaxed italic">
+            "단순 수동 설계를 넘어 파라메트릭 공차 계산서를 기획하고 자사 설계 표준 소프트웨어를 만드시는 모습을 보며 주니어 엔지니어들의 롤모델이 되고 있습니다. 시니어의 가치는 이런 기술적 깊이와 표준 수립에 있다는 것을 배웁니다."
+          </p>
+          <div class="flex items-center space-x-3 mt-6">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-300">장</div>
+            <div>
+              <p class="text-sm font-bold text-slate-200">장비 설계팀 이하은 프로</p>
+              <p class="text-[10px] text-slate-500">삼성디스플레이 아산캠퍼스</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / COLLABORATION FORM SECTION -->
+  <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-slate-900/40 border border-slate-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+      <!-- Glow Decorator -->
+      <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px]"></div>
+
+      <!-- Info Column (Left) -->
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-xs font-mono text-blue-400 tracking-widest uppercase">Get in touch</span>
+        <h2 class="text-3xl font-extrabold text-white">협업 및 기술 자문 제안</h2>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          18년의 디스플레이 정밀 장비 개발 경험과 수치 해석 및 가상 시뮬레이션 기반의 설계 검증 시스템 협력이 가능합니다. 
+          디바이스 기구 설계 자문, 전산 해석 검토, 자동화 소프트웨어 시스템 구축 등 편하게 문의사항을 전달주세요.
+        </p>
+
+        <div class="space-y-4 pt-6 text-sm text-slate-300">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <span>contact@samsungdisplay-veteran.com</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <span>삼성디스플레이 기흥 / 천안아산 사업장</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Column (Right) -->
+      <div class="lg:col-span-7 bg-slate-900 border border-slate-800/80 rounded-2xl p-6 relative z-10">
+        <form id="contact-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase mb-2">성함 / 기업명</label>
+              <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-blue-500 transition-colors" placeholder="홍길동 수석">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase mb-2">회신용 이메일 주소</label>
+              <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-blue-500 transition-colors" placeholder="gildong@company.com">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-400 uppercase mb-2">문의 유형</label>
+            <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-blue-500 transition-colors">
+              <option>도포 장비 관련 설계 기술 제휴</option>
+              <option>물리 역학 (구조/유체) CAE 해석 프로젝트 의뢰</option>
+              <option>S/W 연동 설계 자동화 툴 자문</option>
+              <option>기타 제안 및 연락</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-400 uppercase mb-2">상세 제안 내용</label>
+            <textarea rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-blue-500 transition-colors" placeholder="프로젝트 목적, 타임라인 및 상세 기구 설계 자문 요청 내역을 적어주세요."></textarea>
+          </div>
+          
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold hover:shadow-lg hover:shadow-blue-500/20 transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> 기술 문의 메일 전송
+          </button>
+        </form>
+
+        <div id="form-success-box" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center space-x-3 text-emerald-400 text-sm">
+          <i class="fa-regular fa-circle-check text-xl"></i>
+          <div>
+            <p class="font-bold">성공적으로 접수되었습니다!</p>
+            <p class="text-xs text-emerald-500/80 mt-0.5">전달받으신 메일 주소로 조속히 직접 회신드리겠습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 border-t border-slate-900 py-12 text-slate-500 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <div class="w-6 h-6 rounded bg-slate-800 flex items-center justify-center text-slate-400 text-xs font-bold">SW</div>
+        <span>© 2026 Engineer Choi Dae Hwi Portfolio. All rights reserved.</span>
+      </div>
+      
+      <div class="flex space-x-6 text-slate-400">
+        <a href="#about" class="hover:text-blue-400 transition-colors">프로필</a>
+        <a href="#simulator" class="hover:text-cyan-400 transition-colors">설계 계산 툴</a>
+        <a href="#projects" class="hover:text-indigo-400 transition-colors">양산실적</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR SIMULATOR AND INTERACTION -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 2. Project Portfolio Filter Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-blue-600', 'text-white');
+          b.classList.add('bg-slate-900', 'border', 'border-slate-800', 'text-slate-400');
+        });
+        btn.classList.add('active', 'bg-blue-600', 'text-white');
+        btn.classList.remove('bg-slate-900', 'border', 'border-slate-800', 'text-slate-400');
+
+        const category = btn.getAttribute('data-category');
+
+        projectCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+            setTimeout(() => { card.style.opacity = '1'; }, 50);
+          } else {
+            card.classList.add('hidden');
+            card.style.opacity = '0';
+          }
+        });
+      });
+    });
+
+    // 3. Fluid Physics Dispensing Simulator Engine (Framed as Engineer Portfolio S/W Piece)
+    const canvas = document.getElementById('sim-canvas');
+    const ctx = canvas.getContext('2d');
+    const container = document.getElementById('canvas-container');
+
+    const pressureInput = document.getElementById('param-pressure');
+    const viscosityInput = document.getElementById('param-viscosity');
+    const speedInput = document.getElementById('param-speed');
+    const diameterInput = document.getElementById('param-diameter');
+
+    const valPressure = document.getElementById('val-pressure');
+    const valViscosity = document.getElementById('val-viscosity');
+    const valSpeed = document.getElementById('val-speed');
+    const valDiameter = document.getElementById('val-diameter');
+
+    const calcFlow = document.getElementById('calc-flow');
+    const calcWidth = document.getElementById('calc-width');
+    const calcShear = document.getElementById('calc-shear');
+    const calcStatus = document.getElementById('calc-status');
+    const logText = document.getElementById('diagnostic-log');
+
+    const simStartBtn = document.getElementById('sim-start-btn');
+    const simResetBtn = document.getElementById('sim-reset-btn');
+
+    let animationFrameId = null;
+    let pathProgress = 0; 
+    let isSimulating = false;
+    let dpr = window.devicePixelRatio || 1;
+
+    function recalculatePhysics() {
+      const P = parseFloat(pressureInput.value);     
+      const mu = parseFloat(viscosityInput.value);   
+      const V = parseFloat(speedInput.value);         
+      const d = parseFloat(diameterInput.value);     
+      const L = 10;                                  
+
+      const P_Pa = P * 1000;
+      const mu_PaS = mu / 1000;
+      const d_m = d / 1000;
+      const L_m = L / 1000;
+
+      // Hagen-Poiseuille Calculation
+      const Q_vol_m3s = (Math.PI * Math.pow(d_m, 4) * P_Pa) / (128 * mu_PaS * L_m);
+      const resinDensity = 1.1; 
+      const Q_mg_s = Q_vol_m3s * 1000 * 1000 * 1000 * resinDensity * 1.5; 
+
+      let lineW = (Q_mg_s / (V * 0.1)) * 0.45;
+      if (lineW < d * 0.8) lineW = d * 0.8; 
+
+      const shearStress = (P_Pa * d_m) / (4 * L_m);
+
+      valPressure.innerText = P;
+      valViscosity.innerText = mu;
+      valSpeed.innerText = V;
+      valDiameter.innerText = d;
+
+      calcFlow.innerText = Q_mg_s.toFixed(3);
+      calcWidth.innerText = lineW.toFixed(2);
+      calcShear.innerText = shearStress.toFixed(1);
+
+      let status = "OPTIMAL";
+      let statusClass = "text-emerald-400";
+      let statusDesc = "도포 품질 우수: 유동 압축 분포와 점성 유동이 균일하여 완벽한 실링 수율을 가집니다.";
+
+      const flowToSpeedRatio = Q_mg_s / V;
+
+      if (flowToSpeedRatio < 0.005) {
+        status = "UNDERFILL";
+        statusClass = "text-rose-400";
+        statusDesc = "과소 토출: 압력이 약하거나 이송 속도가 너무 빨라 도포 끊김(Underfill) 불량이 발생할 수 있습니다.";
+      } else if (flowToSpeedRatio > 0.035) {
+        status = "OVERFLOW";
+        statusClass = "text-amber-400";
+        statusDesc = "과토출 위험: 압력이 세거나 이송 속도가 느려 패널 외측으로 수지가 범람(Overflow)할 위험이 있습니다.";
+      }
+
+      calcStatus.innerText = status;
+      calcStatus.className = `text-base sm:text-lg font-bold mt-1 ${statusClass}`;
+      
+      if (!isSimulating) {
+        logText.innerText = statusDesc;
+      }
+
+      return { Q: Q_mg_s, W: lineW, speed: V, status: status };
+    }
+
+    function resizeCanvas() {
+      const width = container.clientWidth;
+      const height = container.clientHeight || 300;
+      
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+      
+      ctx.scale(dpr, dpr);
+      drawScreen(pathProgress);
+    }
+
+    function drawScreen(progress) {
+      const width = canvas.width / dpr;
+      const height = canvas.height / dpr;
+
+      ctx.clearRect(0, 0, width, height);
+
+      const margin = 50;
+      const displayW = width - (margin * 2);
+      const displayH = height - (margin * 2);
+
+      // Outer panel glass
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(margin, margin, displayW, displayH);
+
+      // Grid helper inside panel
+      ctx.strokeStyle = '#0f172a';
+      ctx.lineWidth = 1;
+      for (let i = margin + 30; i < margin + displayW; i += 30) {
+        ctx.beginPath();
+        ctx.moveTo(i, margin);
+        ctx.lineTo(i, margin + displayH);
+        ctx.stroke();
+      }
+      for (let j = margin + 30; j < margin + displayH; j += 30) {
+        ctx.beginPath();
+        ctx.moveTo(margin, j);
+        ctx.lineTo(margin + displayW, j);
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = '#475569';
+      ctx.font = '10px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText("가상 디스플레이 모듈 패널 (Active Area)", width/2, height/2);
+
+      const inset = 12;
+      const pathX = margin + inset;
+      const pathY = margin + inset;
+      const pathW = displayW - (inset * 2);
+      const pathH = displayH - (inset * 2);
+
+      const seg1 = pathW;
+      const seg2 = pathH;
+      const seg3 = pathW;
+      const seg4 = pathH;
+      const totalLength = seg1 + seg2 + seg3 + seg4;
+
+      // Draw Path guideline
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.strokeRect(pathX, pathY, pathW, pathH);
+      ctx.setLineDash([]); 
+
+      const currentDist = (progress / 100) * totalLength;
+      let currentX = pathX;
+      let currentY = pathY;
+
+      if (currentDist <= seg1) {
+        currentX = pathX + currentDist;
+        currentY = pathY;
+      } else if (currentDist <= seg1 + seg2) {
+        currentX = pathX + pathW;
+        currentY = pathY + (currentDist - seg1);
+      } else if (currentDist <= seg1 + seg2 + seg3) {
+        currentX = pathX + pathW - (currentDist - seg1 - seg2);
+        currentY = pathY + pathH;
+      } else {
+        currentX = pathX;
+        currentY = pathY + pathH - (currentDist - seg1 - seg2 - seg3);
+      }
+
+      const physics = recalculatePhysics();
+      const beadWidth = physics.W * 4; 
+      
+      let resinColor = 'rgba(6, 182, 212, 0.75)'; 
+      if (physics.status === 'UNDERFILL') resinColor = 'rgba(244, 63, 94, 0.5)'; 
+      if (physics.status === 'OVERFLOW') resinColor = 'rgba(245, 158, 11, 0.85)'; 
+
+      ctx.strokeStyle = resinColor;
+      ctx.lineWidth = beadWidth;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      ctx.beginPath();
+      ctx.moveTo(pathX, pathY);
+
+      const maxDrawDist = Math.min(currentDist, totalLength);
+
+      if (maxDrawDist > 0) {
+        let remaining = maxDrawDist;
+        
+        if (remaining > seg1) {
+          ctx.lineTo(pathX + pathW, pathY);
+          remaining -= seg1;
+          
+          if (remaining > seg2) {
+            ctx.lineTo(pathX + pathW, pathY + pathH);
+            remaining -= seg2;
+            
+            if (remaining > seg3) {
+              ctx.lineTo(pathX, pathY + pathH);
+              remaining -= seg3;
+              
+              ctx.lineTo(pathX, pathY + pathH - remaining);
+            } else {
+              ctx.lineTo(pathX + pathW - remaining, pathY + pathH);
+            }
+          } else {
+            ctx.lineTo(pathX + pathW, pathY + remaining);
+          }
+        } else {
+          ctx.lineTo(pathX + remaining, pathY);
+        }
+        ctx.stroke();
+      }
+
+      if (progress > 0 && progress < 100) {
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+        ctx.shadowBlur = 8;
+        ctx.shadowOffsetX = 3;
+        ctx.shadowOffsetY = 3;
+
+        ctx.fillStyle = '#475569';
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(currentX, currentY, 10, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#06b6d4';
+        ctx.beginPath();
+        ctx.arc(currentX, currentY, beadWidth/2 + 1, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+
+        ctx.strokeStyle = 'rgba(6, 182, 212, 0.3)';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(currentX - 25, currentY); ctx.lineTo(currentX + 25, currentY);
+        ctx.moveTo(currentX, currentY - 25); ctx.lineTo(currentX, currentY + 25);
+        ctx.stroke();
+      }
+    }
+
+    function animate() {
+      if (!isSimulating) return;
+
+      const physics = recalculatePhysics();
+      const speedStep = (physics.speed / 150) * 0.8 + 0.1;
+      
+      pathProgress += speedStep;
+      
+      if (pathProgress >= 100) {
+        pathProgress = 100;
+        isSimulating = false;
+        drawScreen(pathProgress);
+        logText.innerText = `[해석 완료] 이송 제어 가이드 궤적 도포 완료. 종합 결과: ${physics.status}`;
+        simStartBtn.innerHTML = `<i class="fa-solid fa-play"></i> 시뮬레이션 재실행`;
+        return;
+      }
+
+      drawScreen(pathProgress);
+      logText.innerText = `[궤적 연산중] 노즐 이송 속도: ${physics.speed}mm/s | 수지 토출량: ${physics.Q.toFixed(2)}mg/s`;
+
+      animationFrameId = requestAnimationFrame(animate);
+    }
+
+    simStartBtn.addEventListener('click', () => {
+      if (isSimulating) {
+        isSimulating = false;
+        simStartBtn.innerHTML = `<i class="fa-solid fa-play"></i> 계속`;
+        logText.innerText = "가상 시뮬레이션 일시정지.";
+      } else {
+        if (pathProgress >= 100) {
+          pathProgress = 0; 
+        }
+        isSimulating = true;
+        simStartBtn.innerHTML = `<i class="fa-solid fa-pause"></i> 일시정지`;
+        animate();
+      }
+    });
+
+    simResetBtn.addEventListener('click', () => {
+      isSimulating = false;
+      pathProgress = 0;
+      cancelAnimationFrame(animationFrameId);
+      drawScreen(0);
+      recalculatePhysics();
+      simStartBtn.innerHTML = `<i class="fa-solid fa-play"></i> 시작`;
+    });
+
+    [pressureInput, viscosityInput, speedInput, diameterInput].forEach(elem => {
+      elem.addEventListener('input', () => {
+        recalculatePhysics();
+        if (!isSimulating) {
+          drawScreen(pathProgress);
+        }
+      });
+    });
+
+    window.addEventListener('resize', resizeCanvas);
+    
+    window.onload = function() {
+      resizeCanvas();
+      recalculatePhysics();
+    }
+
+    // 4. Contact Form Simulated Submit
+    const contactForm = document.getElementById('contact-form');
+    const successBox = document.getElementById('form-success-box');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      successBox.classList.remove('hidden');
+      contactForm.reset();
+      
+      setTimeout(() => {
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    });
+
+  </script>
+</body>
+</html>
