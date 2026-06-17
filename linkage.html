@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기구공학 4절 링크 시뮬레이션</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .container { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;}
+        canvas { background-color: #fafafa; border: 1px solid #ccc; border-radius: 5px; }
+        .controls { display: flex; flex-direction: column; gap: 15px; width: 300px; }
+        .control-group { display: flex; flex-direction: column; }
+        .control-group label { font-weight: bold; margin-bottom: 5px; color: #333; display: flex; justify-content: space-between; }
+        input[type=range] { width: 100%; cursor: pointer; }
+        .info { background: #eef2f5; padding: 10px; border-radius: 5px; font-size: 13px; color: #555; line-height: 1.5; }
+        .btn-group { display: flex; gap: 10px; }
+        button { flex: 1; padding: 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; background: #007bff; color: white; transition: 0.2s; }
+        button:hover { background: #0056b3; }
+        button.stop { background: #dc3545; }
+        button.stop:hover { background: #a71d2a; }
+    </style>
+</head>
+<body>
+
+    <h2>⚙️ 기구공학 4절 링크(Four-bar Linkage) 시뮬레이터</h2>
+
+    <div class="container">
+        <canvas id="canvas" width="600" height="450"></canvas>
+        
+        <div class="controls">
+            <div class="info">
+                <strong>[그라쇼프 법칙 (Grashof Condition)]</strong><br>
+                가장 짧은 링크와 가장 긴 링크의 길이 합이 나머지 두 링크의 길이 합보다 작거나 같아야 크랭크(입력단)가 360도 회전할 수 있습니다.
+            </div>
+
+            <div class="control-group">
+                <label>입력 링크 (Crank, 빨강) <span id="valL2">40</span></label>
+                <input type="range" id="L2" min="10" max="150" value="40">
+            </div>
+            <div class="control-group">
+                <label>커플러 (Coupler, 파랑) <span id="valL3">100</span></label>
+                <input type="range" id="L3" min="50" max="250" value="100">
+            </div>
+            <div class="control-group">
+                <label>출력 링크 (Rocker, 초록) <span id="valL4">100</span></label>
+                <input type="range" id="L4" min="50" max="250" value="100">
+            </div>
+            <div class="control-group">
+                <label>고정 링크 (Ground, 회색) <span id="valL1">120</span></label>
+                <input type="range" id="L1" min="50" max="250" value="120">
+            </div>
+            <div class="control-group">
+                <label>회전 속도 <span id="valSpeed">2</span></label>
+                <input type="range" id="speed" min="1" max="10" value="2">
+            </div>
+
+            <div class="btn-group">
+                <button id="toggleBtn" onclick="toggleAnimation()">일시정지</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 슬라이더 요소 가져오기
+        const L2_input = document.getElementById('L2');
+        const L3_input = document.getElementById('L3');
+        const L4_input = document.getElementById('L4');
+        const L1_input = document.getElementById('L1');
+        const speed_input = document.getElementById('speed');
+
+        // 변수 초기화
+        let theta = 0; // 크랭크 각도
+        let isAnimating = true;
+        let animationId;
+        let trace = []; // 커플러 조인트(C)의 궤적 저장
+
+        // 고정점 A (크랭크 축)의 캔버스 내 위치
+        const Ax = 200;
+        const Ay = 300;
+
+        function updateSimulation() {
+            // 1. 값 읽어오기
+            const L2 = parseFloat(L2_input.value); // 크랭크 길이
+            const L3 = parseFloat(L3_input.value); // 커플러 길이
+            const L4 = parseFloat(L4_input.value); // 로커 길이
+            const L1 = parseFloat(L1_input.value); // 고정단(A~D) 거리
+            const speed = parseFloat(speed_input.value) * 0.02;
+
+            // 라벨 업데이트
+            document.getElementById('valL2').innerText = L2;
+            document.getElementById('valL3').innerText = L3;
+            document.getElementById('valL4').innerText = L4;
+            document.getElementById('valL1').innerText = L1;
+            document.getElementById('valSpeed').innerText = speed_input.value;
+
+            // 고정점 D의 위치
+            const Dx = Ax + L1;
+            const Dy = Ay;
+
+            // 2. 수학적 기하 연산 (점 B와 C의 위치 계산)
+            // 점 B (크랭크의 끝점)
+            const Bx = Ax + L2 * Math.cos(theta);
+            const By = Ay + L2 * Math.sin(theta);
+
+            // 점 C를 구하기 위한 두 원의 교점 계산 (원 1: B중심 L3반경, 원 2: D중심 L4반경)
+            const distBD = Math.hypot(Dx - Bx, Dy - By);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // 캔버스 지우기
+
+            // 조립 가능 여부 확인 (두 원이 만나는가?)
+            if (distBD > L3 + L4 || distBD < Math.abs(L3 - L4)) {
+                // 회전 불가능 구간 도달 시 반대 방향으로 회전 (로커-로커 구조 등에서 발생)
+                theta -= speed * 2; 
+                ctx.fillStyle = "red";
+                ctx.font = "16px Arial";
+                ctx.fillText("⚠️ 조립 한계점 도달 (구속 상태)", 20, 30);
+                trace = []; // 궤적 초기화
+            } else {
+                // 코사인 제 1법칙 등을 활용한 교점(C) 계산
+                const a = (L3 * L3 - L4 * L4 + distBD * distBD) / (2 * distBD);
+                const h = Math.sqrt(L3 * L3 - a * a);
+                
+                const P2x = Bx + a * (Dx - Bx) / distBD;
+                const P2y = By + a * (Dy - By) / distBD;
+
+                // 기구의 조립 형태(오픈/크로스)에 따라 2가지 해가 존재하지만 일반적인 형태 1개 적용
+                const Cx = P2x - h * (Dy - By) / distBD;
+                const Cy = P2y + h * (Dx - Bx) / distBD;
+
+                // 궤적 저장 (너무 길어지지 않게 150개 유지)
+                trace.push({x: Cx, y: Cy});
+                if(trace.length > 150) trace.shift();
+
+                // 3. 그리기 
+                drawTrace();
+                drawLink(Ax, Ay, Dx, Dy, '#999', 8); // 고정 링크
+                drawLink(Ax, Ay, Bx, By, '#ff4d4d', 8); // 크랭크 (입력)
+                drawLink(Bx, By, Cx, Cy, '#4d79ff', 8); // 커플러
+                drawLink(Dx, Dy, Cx, Cy, '#2eb82e', 8); // 로커 (출력)
+
+                // 조인트(힌지) 그리기
+                drawJoint(Ax, Ay);
+                drawJoint(Dx, Dy);
+                drawJoint(Bx, By);
+                drawJoint(Cx, Cy);
+                
+                // 점 B 궤적 (입력단 궤적 - 항상 원)
+                ctx.beginPath();
+                ctx.arc(Ax, Ay, L2, 0, Math.PI * 2);
+                ctx.strokeStyle = "rgba(255, 0, 0, 0.2)";
+                ctx.setLineDash([5, 5]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+
+            if (isAnimating) {
+                theta -= speed; // 각도 증가 (회전)
+            }
+            animationId = requestAnimationFrame(updateSimulation);
+        }
+
+        // 링크를 그리는 함수
+        function drawLink(x1, y1, x2, y2, color, width) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = width;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+        }
+
+        // 조인트(관절)를 그리는 함수
+        function drawJoint(x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 6, 0, Math.PI * 2);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "black";
+            ctx.stroke();
+        }
+
+        // 커플러(C점)의 궤적(Trace) 그리기
+        function drawTrace() {
+            if(trace.length < 2) return;
+            ctx.beginPath();
+            ctx.moveTo(trace[0].x, trace[0].y);
+            for(let i=1; i<trace.length; i++) {
+                ctx.lineTo(trace[i].x, trace[i].y);
+            }
+            ctx.strokeStyle = "rgba(0, 0, 0, 0.3)";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        // 애니메이션 재생/일시정지 토글
+        function toggleAnimation() {
+            const btn = document.getElementById('toggleBtn');
+            isAnimating = !isAnimating;
+            if (isAnimating) {
+                btn.innerText = "일시정지";
+                btn.classList.remove('stop');
+            } else {
+                btn.innerText = "재생";
+                btn.classList.add('stop');
+            }
+        }
+
+        // 슬라이더 값이 변경될 때 궤적 초기화 (더 깔끔하게 보이기 위함)
+        const inputs = [L2_input, L3_input, L4_input, L1_input];
+        inputs.forEach(input => {
+            input.addEventListener('input', () => { trace = []; });
+        });
+
+        // 시뮬레이션 시작
+        updateSimulation();
+    </script>
+</body>
+</html>
